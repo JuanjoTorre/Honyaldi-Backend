@@ -87,7 +87,7 @@ Creamos el archivo index.js
             En estos controladores ira toda la logica de la programacion e interactuaran con los models de la bd
 
 
-      PAGINACION
+      PAGINACION prueba
             En principio no voy a usar paginacion 
       
       
