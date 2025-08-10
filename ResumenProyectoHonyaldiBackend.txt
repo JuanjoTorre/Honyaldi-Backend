@@ -1,4 +1,4 @@
-PROYECTO 'HONYALDI BACKEND'
+PROYECTO 'HONYALDI BACKEND' ñldkjfñlakjslfkjalskjflñkajslfkj
 
 Pasos a dar para la creacion de un proyecto de backend con node:
 
@@ -87,7 +87,7 @@ Creamos el archivo index.js
             En estos controladores ira toda la logica de la programacion e interactuaran con los models de la bd
 
 
-      PAGINACION prueba
+      PAGINACION
             En principio no voy a usar paginacion 
       
       
