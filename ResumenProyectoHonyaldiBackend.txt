@@ -1,4 +1,4 @@
-PROYECTO 'HONYALDI BACKEND' ñldkjfñlakjslfkjalskjflñkajslfkj
+PROYECTO 'HONYALDI BACKEND' 
 
 Pasos a dar para la creacion de un proyecto de backend con node:
 
@@ -89,5 +89,11 @@ Creamos el archivo index.js
 
       PAGINACION
             En principio no voy a usar paginacion 
+
+      GITHUB
+            Para hacer cambio en GITHUB
+                  git add .
+                  git commit -m "Comentario"
+                  git push
       
       
