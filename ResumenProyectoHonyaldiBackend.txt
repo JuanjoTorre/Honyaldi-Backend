@@ -1,0 +1,93 @@
+PROYECTO 'HONYALDI BACKEND'
+
+Pasos a dar para la creacion de un proyecto de backend con node:
+
+Abrimos la carpeta donde ira el proyecto en una terminal
+
+      - npm init -y
+            Creamos el fichero package.json donde iran la configuracion del proyecto y sus dependencias
+            Este archivo es el punto de entrada de cualquier aplicacion de node
+
+Creamos el archivo index.js
+      -npm index.js
+            Este es el comando para ejecutar el archivo index.js
+            Con este comando, cada vez que hagamos una modificacion del codigo, deberiamos ejecutarlo para ver los cambios.
+            Para evitar esto vamos a instalar nodemon 
+
+      -npm i nodemon -g (el -g significa que vamos a instalar nodemon en global)
+            Instalamos nodemon que nos va a facilitar el trabajo de desarrollo
+            Para que funcione, en el archivo package.json deberemos dejar el apartado de scripts de la siguiente manera
+                  "scripts": {
+                        "dev": "nodemon index.js",
+                        "start": "node index.js"
+                  },
+            Esto siginifica que cuando el proyecto este instalado se ejecutara el comando start
+            Pero que en produccion usaremos el comando dev
+            A partir de estos cambios, en produccion, para ejecutar el index y dejarlo escuchando usaremos el comando:
+                  npm run dev
+
+      EXPRESS
+            -npm i express 
+                  Instalamos express 
+                  Esto crea una carpeta llamada node_modules y el archivo package-lock.json.
+                  En el archivo index.js realizaremos la configuracion del servidor de express
+
+            -A partir de ahora probaremos el servidor de express con la aplicacion Postman
+
+            -Carpeta publica
+                  Vamos a crear, en la raiz del proyecto,  una carpeta con el nombre de public  donde ira montada el frontend de la aplicacion 
+                  Sustituimos en el index.js, las rutas por 'app.use( express.static('public') );' para que cargue la carpeta public
+
+            -Variables de entorno
+                  Para gestionar las variables de entorno vamos a crear un archivo llamado .env donde crearemos las variables de entorno
+                  -npm i dotenv
+                        Ademas deberemos instalar el paquete dotenv para gestinar dichas variables 
+                        Una vez instalado el paquete lo llamaremos en el index.js con el codigo 
+                              require( 'dotenv' ).config();
+                        Para llamar a una variable de entorno usaremos el siguiente codigo
+                              process.env.NombreDeVariable
+            
+            -Rutas de la aplicacion 
+                  Antes hemos definido una ruta (/) en el archivo index.js
+                  Si solo tuvieramos una ruta, esto seria lo correcto, pero como no es el caso haremos lo siguiente.
+                  Vamos a crear, en la raiz del proyecto una carpeta llamad routes.
+                  En esta carpeta iremos creando distintas carpetas y archivos donde organizaremos las rutas del proyecto
+                  
+            -Codigo de las rutas
+                  Crearemos la carpeta controllers donde ira todo el codigo de las distintas rutas
+
+      MONGODB 
+            En este proyecto vamos a utiliar MONGODB como base de datos
+            La configuracion de la bd la haremos en la pagina 'mongodb.com' usando el servicio 'mongodbAtlas'
+            MongodbAtlas es el servicio de mongodb en la nube
+            La creacion, configuracion y conexion con la base de datos se explica en el video nº 380
+            Para gestionar la bd usaremos el programa MongoDBCompass 
+
+            **Para saber la configuracion de la base de datos en mongodb:
+                  En la conexion a la base de datos, abrir el shell y teclear 'db.serverCmdLineOpts()'
+            String de conexion a la bd 
+                  mongodb+srv://honyaldi_user:MFMqIFaqTeM9YYn7@honyaldidb.uocexuh.mongodb.net/honyaldiDB
+
+      
+            -npm i mongoose
+                  Para manejar mongo mas facilmente vamos a instalar un ODM que se llama Mongoose
+            
+
+            
+
+      CORS 
+            -npm i cors
+                  El cors es un paquete que permite controlar quien puede entrar en nuestra aplicacion 
+                  (En principio no lo usamos)
+      
+      FUNCIONAMIENTO DEL BACKEND 
+            En el index.js llamamos a los distintos archivos de rutas que se encuentran en la carpeta 'routes'
+            En la carpeta 'routes' iran todos los archivos de configuracion de las distintas rutas de la aplicacion.
+            Cada ruta de la aplicacion llamara a su controlador correspondiente que se encuetran en la carpeta 'controllers'
+            En estos controladores ira toda la logica de la programacion e interactuaran con los models de la bd
+
+
+      PAGINACION
+            En principio no voy a usar paginacion 
+      
+      
